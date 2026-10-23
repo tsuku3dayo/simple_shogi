@@ -4,3 +4,15 @@ dev-dist/
 playwright-report/
 test-results/
 .venv/
+
+# 機密ファイル（.env.example はダミー値の見本として共有する）
+.env
+.env.*
+!.env.example
+*.pem
+*.p12
+*.pfx
+credentials.json
+
+# Claude Code の個人設定（チーム共有は .claude/settings.json）
+.claude/settings.local.json
