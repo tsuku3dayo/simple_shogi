@@ -1,8 +1,10 @@
 // ビルド成果物（dist/）が PWA として成立しているかを確認する: npm run build のあとに実行
 import { existsSync, readFileSync } from 'node:fs';
 import { join } from 'node:path';
+import { fileURLToPath } from 'node:url';
 
-const dist = new URL('../dist/', import.meta.url).pathname;
+// URL の pathname は、日本語などを %XX にしたままで、Windows では先頭に / も付くので、ファイルのパスに直して使う
+const dist = fileURLToPath(new URL('../dist/', import.meta.url));
 const errors = [];
 const need = (cond, msg) => { if (!cond) errors.push(msg); };
 
