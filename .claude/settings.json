@@ -1,0 +1,18 @@
+{
+  "enableAllProjectMcpServers": false,
+  "enabledMcpjsonServers": [],
+
+  "permissions": {
+    "deny": [
+      "Read(/.env)", "Read(/.env.*)",
+      "Edit(/.env)", "Edit(/.env.*)",
+
+      "Read(/docs/transcripts/**)",
+      "Edit(/docs/transcripts/**)"
+    ],
+
+    "ask": [
+      "Bash(npm install*)", "PowerShell(npm install*)"
+    ]
+  }
+}
